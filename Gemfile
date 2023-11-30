@@ -51,8 +51,8 @@ end
 group :test do
   gem "rspec-rails"
   gem "simplecov"
-  gem "webmock"
-  gem "vcr"
+  # gem "webmock"
+  # gem "vcr"
   # gem "factory_bot_rails"
   # gem "faker"
   gem "shoulda-matchers"
