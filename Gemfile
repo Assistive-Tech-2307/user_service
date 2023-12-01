@@ -58,3 +58,5 @@ group :test do
   gem "shoulda-matchers"
 end
 
+
+gem "graphql", "~> 2.1"

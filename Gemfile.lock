@@ -88,6 +88,8 @@ GEM
     faraday-net_http (3.0.2)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    graphql (2.1.6)
+      racc (~> 1.4)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
@@ -212,6 +214,7 @@ DEPENDENCIES
   bootsnap
   debug
   faraday
+  graphql (~> 2.1)
   pg (~> 1.1)
   pry
   puma (~> 5.0)
