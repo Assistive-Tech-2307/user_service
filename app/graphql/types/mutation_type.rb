@@ -2,11 +2,17 @@
 
 module Types
   class MutationType < Types::BaseObject
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World"
+    field :sessionCreate, Types::UserType, null: false do
+      argument :email, String, required: true
+      argument :password, String, required: true
+    end
+    def sessionCreate(email:, password:)
+      user = User.find_by(email: email)
+      if user&.authenticate(password)
+        user
+      else
+        raise GraphQL::ExecutionError.new("Invalid email or password")
+      end
     end
   end
 end

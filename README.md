@@ -1,24 +1,46 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install
+- pull respository down
+- move into directory
+- in terminal `bundle`
+- in terminal `rails db:{create,migrate,seed}`
+- in terminal `rails server` defaults to 3001
 
-Things you may want to cover:
 
-* Ruby version
+## Graphql Endpoints
 
-* System dependencies
+Create session </br>
+`POST http://localhost:3001/graphql`
+ 
+ In query </br>
+ 
+ ```
+ mutation Session{
+    sessionCreate(email:"<user's email>", password:"<user's password"){
+        id
+        email
+    }
+}
+```
+example </br>
+ ```
+ mutation Session{
+    sessionCreate(email:"rosa@aol.com", password:"rosaslaw10!"){
+        id
+        email
+    }
+}
+```
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+sample response
+```
+{
+    "data": {
+        "sessionCreate": {
+            "id": "1",
+            "email": "rosa@aol.com"
+        }
+    }
+}
+```
