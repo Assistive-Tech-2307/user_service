@@ -25,5 +25,12 @@ module Types
     def all_comments
       Comment.all
     end
+
+    field :all_category_comments, [CommentType], null: false do
+      argument :category_id, Integer, required: true
+    end
+    def all_category_comments(category_id:)
+      Comment.where(category_id: category_id )
+    end
   end
 end
