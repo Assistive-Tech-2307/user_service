@@ -8,3 +8,13 @@
 
 
 User.create(name: "Rosa Marcellino", email: "rosa@aol.com", password: "rosaslaw10!")
+
+Category.create(title: "Blindness")
+Category.create(title: "Low Vision")
+Category.create(title: "Deaf/Hard of Hearing")
+Category.create(title: "Mobility Supports for Fine Motor Issues")
+Category.create(title: "Mobility Supports for Gross Motor Issues")
+Category.create(title: "Cognitive Supports for Reading and Writing")
+Category.create(title: "Cognitive Supports for Math")
+Category.create(title: "Cognitive Supports for Focus")
+Category.create(title: "Communication Supports")
