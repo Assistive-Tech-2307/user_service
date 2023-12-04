@@ -2,7 +2,10 @@
 
 ## Table of Contents
 - [About this App](#about-this-app)
+- [Preloaded seeds](#preloaded-seeds)
+- [Install Ruby with Brew](#install-ruby-with-brew)
 - [Install](#install)
+- [Reset Database](#reset-database)
 - [Database](#database)
 - [GraphQL Endpoints](#graphql-endpoints)
    - [Create Session](#create-session)
@@ -14,12 +17,33 @@
 
 ## About this App
 
+## Preloaded seeds
+```
+User.create(name: "Rosa Marcellino", email: "rosa@aol.com", password: "rosaslaw10!")
+User.create(name: "Amy Rowley", email: "amy@aol.com", password: "Rowley10!")
+User.create(name: "Oliver Brown", email: "brown@aol.com", password: "Brown10!")
+```
+
+## Install Ruby with Brew
+- In terminal, in any directory
+```
+$ brew update
+$ brew install ruby-build
+$ brew install rbenv
+
+$ rbenv install 3.2.2
+$ rbenv global 3.2.2
+```
+
 ## Install
 - pull respository down
 - move into directory
 - in terminal `bundle`
 - in terminal `rails db:{create,migrate,seed}`
 - in terminal `rails server` defaults to 3001
+
+#### reset database
+- in terminal `rails db:{drop,create,migrate,seed}`
 
 ## Database
 ![Schema Setup](<schema.png>)
