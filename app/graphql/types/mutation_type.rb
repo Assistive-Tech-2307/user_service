@@ -2,6 +2,8 @@
 
 module Types
   class MutationType < Types::BaseObject
+    field :comment_create, mutation: Mutations::CommentCreate
+    field :comment_delete, mutation: Mutations::CommentDelete
     field :sessionCreate, Types::UserType, null: false do
       argument :email, String, required: true
       argument :password, String, required: true

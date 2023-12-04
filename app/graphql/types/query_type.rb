@@ -20,12 +20,17 @@ module Types
 
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
+    
+    field :all_comments, [CommentType], null: false
+    def all_comments
+      Comment.all
+    end
 
-    # TODO: remove me
-    field :test_field, String, null: false,
-      description: "An example field added by the generator"
-    def test_field
-      "Hello World!"
+    field :all_category_comments, [CommentType], null: false do
+      argument :category_id, Integer, required: true
+    end
+    def all_category_comments(category_id:)
+      Comment.where(category_id: category_id )
     end
   end
 end
