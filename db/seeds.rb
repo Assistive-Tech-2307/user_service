@@ -8,6 +8,8 @@
 
 
 User.create(name: "Rosa Marcellino", email: "rosa@aol.com", password: "rosaslaw10!")
+User.create(name: "Amy Rowley", email: "amy@aol.com", password: "Rowley10!")
+User.create(name: "Oliver Brown", email: "brown@aol.com", password: "Brown10!")
 
 Category.create(title: "Blindness")
 Category.create(title: "Low Vision")
