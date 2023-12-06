@@ -75,7 +75,6 @@ mutation {
             description: "this is my description",
             userComment: "this is my comment",
             rating: true,
-            userRecommended: true,
             category: "Blindness",
             userId: 1
         }
@@ -86,7 +85,6 @@ mutation {
         description
         userComment
         rating
-        userRecommended
         categoryId
         userId
     }
@@ -104,7 +102,6 @@ response <br>
             "description": "this is my description",
             "userComment": "this is my comment",
             "rating": true,
-            "userRecommended": true,
             "categoryId": 1,
             "userId": 1
         }
@@ -130,7 +127,6 @@ mutation {
         description
         userComment
         rating
-        userRecommended
         categoryId
         userId
     }
@@ -148,7 +144,6 @@ regular response <br>
             "description": "this is my description",
             "userComment": "this is my comment",
             "rating": true,
-            "userRecommended": true,
             "categoryId": 1,
             "userId": 1
         }
@@ -195,7 +190,6 @@ query <br>
         description
         userComment
         rating
-        userRecommended
         categoryId
         userId
     }
@@ -214,7 +208,6 @@ response <br>
                 "description": "this is my description",
                 "userComment": "this is my comment",
                 "rating": true,
-                "userRecommended": true,
                 "categoryId": 1,
                 "userId": 1
             },
