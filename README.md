@@ -8,7 +8,6 @@
    - [Create Session](#create-session)
    - [Create Comment](#create-comment)
    - [Delete Comment](#delete-comment)
-   - [Get All Comments](#get-all-comments)
    - [Get All of a Specific Category's Comments](#get-all-of-a-specific-categorys-comments)
 
 
@@ -77,7 +76,8 @@ mutation {
             userComment: "this is my comment",
             rating: true,
             userRecommended: true,
-            category: "Blindness"
+            category: "Blindness",
+            userId: 1
         }
     ) {
         id
@@ -88,6 +88,7 @@ mutation {
         rating
         userRecommended
         categoryId
+        userId
     }
 }
 ```
@@ -104,7 +105,8 @@ response <br>
             "userComment": "this is my comment",
             "rating": true,
             "userRecommended": true,
-            "categoryId": 1
+            "categoryId": 1,
+            "userId": 1
         }
     }
 }
@@ -130,6 +132,7 @@ mutation {
         rating
         userRecommended
         categoryId
+        userId
     }
 }
 ```
@@ -146,7 +149,8 @@ regular response <br>
             "userComment": "this is my comment",
             "rating": true,
             "userRecommended": true,
-            "categoryId": 1
+            "categoryId": 1,
+            "userId": 1
         }
     }
 }
@@ -175,58 +179,6 @@ error response (if comment couldn't be deleted, usually because comment id doesn
 }
 ```
 
-### Get All Comments
-request <br>
-`POST /graphql`
-
-query <br>
-```
-{
-    allComments {
-        id
-        title
-        link
-        description
-        userComment
-        rating
-        userRecommended
-        categoryId
-    }
-}
-```
-
-response <br>
-```
-{
-    "data": {
-        "allComments": [
-            {
-                "id": "1",
-                "title": "this is my title",
-                "link": "link.com",
-                "description": "this is my description",
-                "userComment": "this is my comment",
-                "rating": true,
-                "userRecommended": true,
-                "categoryId": 1
-            },
-            {
-                "id": "3",
-                "title": "this is my title",
-                "link": "link.com",
-                "description": "this is my description",
-                "userComment": "this is my comment",
-                "rating": true,
-                "userRecommended": true,
-                "categoryId": 1
-            },
-            {...},
-            {...}
-        ]
-    }
-}
-```
-
 ### Get All of a Specific Category's Comments
 request <br>
 `POST /graphql`
@@ -245,6 +197,7 @@ query <br>
         rating
         userRecommended
         categoryId
+        userId
     }
 }
 ```
@@ -262,7 +215,8 @@ response <br>
                 "userComment": "this is my comment",
                 "rating": true,
                 "userRecommended": true,
-                "categoryId": 1
+                "categoryId": 1,
+                "userId": 1
             },
             {...},
             {...}
