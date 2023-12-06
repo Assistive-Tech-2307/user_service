@@ -10,7 +10,6 @@ module Mutations
         description: "this is my description",
         user_comment: "this is my comment",
         rating: true,
-        user_recommended: true,
         category_id: @category_1.id,
         user_id: @user_1.id)
 
@@ -27,7 +26,6 @@ module Mutations
                             description
                             userComment
                             rating
-                            userRecommended
                             categoryId
                             userId
                         }
@@ -67,9 +65,6 @@ module Mutations
         expect(comment_data).to have_key(:rating)
         expect(comment_data[:rating]).to be_in([true, false])
         
-        expect(comment_data).to have_key(:userRecommended)
-        expect(comment_data[:userRecommended]).to be_in([true, false])
-        
         expect(comment_data).to have_key(:categoryId)
         expect(comment_data[:categoryId]).to be_an(Integer)        
 
@@ -91,7 +86,6 @@ module Mutations
                             description
                             userComment
                             rating
-                            userRecommended
                             categoryId
                             userId
                         }

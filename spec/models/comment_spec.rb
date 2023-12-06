@@ -7,7 +7,6 @@ RSpec.describe Comment, type: :model do
     it { should validate_presence_of :description }
     it { should validate_presence_of :user_comment }
     it { should validate_presence_of :rating }
-    it { should validate_presence_of :user_recommended }
   end
 
   describe "relationships" do
