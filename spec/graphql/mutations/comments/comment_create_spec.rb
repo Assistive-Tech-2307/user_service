@@ -4,6 +4,7 @@ module Mutations
   module Comments
     RSpec.describe CommentCreate, type: :request do
       it "creates a comment" do
+        @user_1 = User.create(name: "bob", email: "bob@gmail.com", password: "1234")
         @category_1  = Category.create(title: "Blindness")
 
         gql_query = <<~GQL
@@ -17,6 +18,7 @@ module Mutations
                               rating: true,
                               userRecommended: true,
                               category: "Blindness"
+                              userId: #{@user_1.id}
                           }
                       ) {
                           id
@@ -27,6 +29,7 @@ module Mutations
                           rating
                           userRecommended
                           categoryId
+                          userId
                       }
                   }
                 GQL
@@ -69,6 +72,9 @@ module Mutations
         
         expect(comment_data).to have_key(:categoryId)
         expect(comment_data[:categoryId]).to be_an(Integer)
+
+        expect(comment_data).to have_key(:userId)
+        expect(comment_data[:userId]).to be_an(Integer)
       end
     end
   end
