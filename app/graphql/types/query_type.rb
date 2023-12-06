@@ -20,12 +20,6 @@ module Types
 
     # Add root-level fields here.
     # They will be entry points for queries on your schema.
-    
-    field :all_comments, [CommentType], null: false
-    def all_comments
-      Comment.all
-    end
-
     field :all_category_comments, [CommentType], null: false do
       argument :category_id, Integer, required: true
     end

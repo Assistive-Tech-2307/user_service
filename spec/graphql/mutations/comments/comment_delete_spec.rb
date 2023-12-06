@@ -4,13 +4,14 @@ module Mutations
   module Comments
     RSpec.describe CommentDelete, type: :request do
       it "deletes a comment" do
+        @user_1 = User.create(name: "bob", email: "bob@gmail.com", password: "1234")
         @category_1  = Category.create(title: "Blindness")
         @comment_1 = Comment.create(title: "this is my title", link: "link.com",
         description: "this is my description",
         user_comment: "this is my comment",
         rating: true,
-        user_recommended: true,
-        category_id: @category_1.id)
+        category_id: @category_1.id,
+        user_id: @user_1.id)
 
         gql_query = <<~GQL
                       mutation {
@@ -25,8 +26,8 @@ module Mutations
                             description
                             userComment
                             rating
-                            userRecommended
                             categoryId
+                            userId
                         }
                     }
                 GQL
@@ -64,11 +65,11 @@ module Mutations
         expect(comment_data).to have_key(:rating)
         expect(comment_data[:rating]).to be_in([true, false])
         
-        expect(comment_data).to have_key(:userRecommended)
-        expect(comment_data[:userRecommended]).to be_in([true, false])
-        
         expect(comment_data).to have_key(:categoryId)
         expect(comment_data[:categoryId]).to be_an(Integer)        
+
+        expect(comment_data).to have_key(:userId)
+        expect(comment_data[:userId]).to be_an(Integer)
       end
 
       it "returns error key if not deleted" do
@@ -85,8 +86,8 @@ module Mutations
                             description
                             userComment
                             rating
-                            userRecommended
                             categoryId
+                            userId
                         }
                     }
                 GQL
