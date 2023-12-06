@@ -26,7 +26,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_12_05_235010) do
     t.string "description"
     t.string "user_comment"
     t.boolean "rating"
-    t.boolean "user_recommended"
     t.bigint "category_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

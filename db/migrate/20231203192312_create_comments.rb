@@ -6,7 +6,6 @@ class CreateComments < ActiveRecord::Migration[7.0]
       t.string :description
       t.string :user_comment
       t.boolean :rating
-      t.boolean :user_recommended
       t.references :category, null: false, foreign_key: true
 
       t.timestamps
