@@ -26,4 +26,7 @@ Comment.create(title: "User 1 2", link: "comment.com", description: "12", user_c
 Comment.create(title: "User 1 3", link: "comment.com", description: "13", user_comment: "one three", rating: true, category_id: 1, user_id: 1)
 Comment.create(title: "User 1 4", link: "comment.com", description: "14", user_comment: "one four", rating: true, category_id: 1, user_id: 1)
 Comment.create(title: "User 2 1", link: "comment.com", description: "21", user_comment: "two one", rating: true, category_id: 1, user_id: 2)
-Comment.create(title: "User 2 2", link: "comment.com", description: "22", user_comment: "two two", rating: true, category_id: 1, user_id: 2)
+Comment.create(title: "User 2 2", link: "comment.com", description: "22", user_comment: "two two", rating: true, category_id: 2, user_id: 2)
+Comment.create(title: "User 3 1", link: "comment.com", description: "31", user_comment: "three one", rating: true, category_id: 2, user_id: 3)
+Comment.create(title: "User 3 2", link: "comment.com", description: "32", user_comment: "three two", rating: true, category_id: 2, user_id: 3)
+Comment.create(title: "User 3 3", link: "comment.com", description: "33", user_comment: "three three", rating: true, category_id: 2, user_id: 3)
