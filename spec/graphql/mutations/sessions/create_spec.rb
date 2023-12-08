@@ -4,7 +4,7 @@ describe "Sessions API endpoint", type: :request do
 
     query = <<~GQL
       mutation Session{
-        sessionCreate(email:"rosa@aol.com", password:"rosaslaw10!"){
+        sessionCreate(input:{email:"rosa@aol.com", password:"rosaslaw10!"}){
             id
             email
         }
@@ -21,7 +21,7 @@ describe "Sessions API endpoint", type: :request do
 
     query = <<~GQL
       mutation Session{
-        sessionCreate(email:"rosa@aol.com", password:"rosaslaw10!"){
+        sessionCreate(input: {email:"rosa@aol.com", password:"rosaslaw10!"}){
             id
             email
         }
@@ -41,7 +41,7 @@ describe "Sessions API endpoint", type: :request do
 
     query = <<~GQL
       mutation Session{
-        sessionCreate(email: "rosa@aol.com", password: "wrongpassword"){
+        sessionCreate(input: {email: "rosa@aol.com", password: "wrongpassword"}){
           id
           email
         }
@@ -55,7 +55,7 @@ describe "Sessions API endpoint", type: :request do
     session = JSON.parse(response.body, symbolize_names: true)
 
     expect(session).to have_key(:data)
-    expect(session[:data]).to eq(nil)
+    expect(session[:data][:sessionCreate]).to eq(nil)
 
     expect(session).to have_key(:errors)
     expect(session[:errors]).to be_an(Array)
