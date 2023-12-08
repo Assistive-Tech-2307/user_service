@@ -7,6 +7,7 @@
 - [Install](#install)
 - [Reset Database](#reset-database)
 - [Database](#database)
+- [GraphiQL Endpoints](#graphiql-endpoints)
 - [GraphQL Endpoints](#graphql-endpoints)
    - [Create Session](#create-session)
    - [Create Comment](#create-comment)
@@ -46,6 +47,9 @@ $ rbenv global 3.2.2
 
 ## Database
 ![Schema Setup](<schema.png>)
+
+## GraphiQL Endpoints
+- in browser `http://localhost:3001/graphiql`
 
 ## GraphQL Endpoints
 
