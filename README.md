@@ -2,6 +2,9 @@
 
 ## Table of Contents
 - [About this App](#about-this-app)
+- [Production Sites](#production-sites)
+- [Associated Repos](#associated-repos)
+- [Ruby version](#ruby-version)
 - [Preloaded seeds](#preloaded-seeds)
 - [Install Ruby with Brew](#install-ruby-with-brew)
 - [Install](#install)
@@ -13,9 +16,24 @@
    - [Create Comment](#create-comment)
    - [Delete Comment](#delete-comment)
    - [Get All of a Specific Category's Comments](#get-all-of-a-specific-categorys-comments)
+- [Contributors](#contributors)
 
 
 ## About this App
+This application has 1 endpoint that currently allows for 4 different implementations. You can log in and create a session, create a comment, delete a comment, and get all of a specific category's comments. This API feeds into a website called AI AT Ally that helps match assistive technologies to disabilities.
+
+## Production Sites
+- [User Service Production](https://nameless-stream-88171-cdff591c89ed.herokuapp.com/)
+- [AI Service Production](https://dashboard.heroku.com/apps/assistivie-tech-2307)
+- [AT Finder Production](https://at-finder.vercel.app/)
+
+## Associated Repos
+- [AI Service Repo](https://github.com/Assistive-Tech-2307/ai_service)
+- [AT Finder Repo](https://github.com/Assistive-Tech-2307/at-finder)
+- [Organization Profile](https://github.com/Assistive-Tech-2307)
+
+## Ruby version
+ruby 3.2.2
 
 ## Preloaded seeds
 ```
@@ -245,3 +263,8 @@ response <br>
     }
 }
 ```
+
+## Contributors
+- Nick Spencer <a href="https://github.com/deadbert">@github.com/deadbert</a>
+- Joop Stark <a href="https://github.com/JoopStark">@github.com/JoopStart</a>
+- Eliza Keating <a href="https://github.com/elizakeating">@github.com/elizakeating</a>
